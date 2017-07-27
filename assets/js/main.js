@@ -341,15 +341,6 @@
             });
     }
 
-    function renderFootnotes() {
-        gia.append('div')
-            .attr('id', 'gia-sotu-footnotes')
-            .html(
-                '<p>Presidents James A. Garfield (1881) and William Henry Harrison (1841) did not deliver a State of the Union address.<p>' +
-                '<p>Sources: <a href="http://www.presidency.ucsb.edu/sou.php" target="_blank">Gerhard Peters</a> and <a href="http://stateoftheunion.onetwothree.net/texts/" target="_blank">Brad Borevitz</a><p>'
-            );
-    }
-
     function render() {
         d3.selectAll('.gia-sotu-annotation').style('display', function() {
             return selectedSpeech ? 'none' : 'block'
@@ -396,9 +387,9 @@
         // // Oh Firefox, you pain me so.
         // element.scrollTop = 1;
         // if (!element.scrollTop) {
-        // 	element = document.documentElement;
+        //  element = document.documentElement;
         // } else {
-        // 	element.scrollTop = 0;
+        //  element.scrollTop = 0;
         // }
 
         d3.select(window).transition()
@@ -489,7 +480,6 @@
         renderAxis();
         render();
         renderAnnotations();
-        renderFootnotes();
 
         window.onscroll = setChartPosition;
         setChartPosition();
